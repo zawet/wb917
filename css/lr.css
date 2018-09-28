@@ -1,0 +1,142 @@
+@charset "utf-8";
+/*****************************主框架样式*****************************/
+.jlbody{ overflow-x: hidden; position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 2;  background:#fff;}
+.jlbox{ position: absolute;z-index: 6666;width: 100%; height: 100%; top: 0; left: 0; box-sizing: border-box; padding: 8% 2% 0;}
+/*背景层*/
+.page{ width: 100%; height: 100%;  position: fixed; top: 0; left: 0; overflow: hidden; z-index: 66;}
+.page img{display: block; height: 100%;  }
+.page img.w{ width: 100%; height: auto; margin: 0;}
+.page.pjpage{ height: 61.8%; position: relative;}
+.page.banneroa{ height:94%;}
+
+
+/*加载页*/
+.loadprogress{ position: fixed; top: 0; left: 0;z-index: 9999999999999; width: 100%; height: 100%;
+  background-image:-webkit-linear-gradient(top,#020e28,#083488);
+  background-image:linear-gradient(top,#020e28,#083488);
+}
+.loadprogress.inout{ z-index: 9; background: none; opacity: 0.1; position: absolute;}
+.progress{position: absolute; top: 50%; left: 0;  width: 100%; margin-top: -60px;}
+.loadprogress.inout .progress{ top: 30%;}
+.progresslogo img{ width: 14%; margin: 0 auto 10px; display: block;}
+.progresszi{ width: 60%; height: 4px; background: rgba(255,255,255,0.6);border-radius: 4px; margin: 0 auto;}
+.progresszi b{ display: block; height: 100%; width: 2%; background: #fff;border-radius: 4px; max-width: 100%;}
+.progressyuan{ width:120px; height: 120px;display: -webkit-box !important;display: box !important;position: relative; margin: 0 auto;}
+.progressyuan .pro{ overflow: hidden; width: 50%; height: 100%; position: absolute; top: 0;}
+.progressyuan .pro b{ display: block; width: 200%; height: 100%; border:6px solid  transparent; border-radius:50%; position: absolute; box-sizing: border-box; top:0; left: 0; transform:rotateZ(225deg); }
+.progressyuan .pro.proleft{ left: 0;}
+.progressyuan .pro.proright{right: 0;}
+.progressyuan .pro.proleft b{ border-bottom:6px solid  #fff; border-left:6px solid  #fff; }
+.progressyuan .pro.proright b{ border-top:6px solid  #fff; border-right:6px solid  #fff;left: -100%; }
+.protxt{ position: absolute; width: 90%; height: 90%; top: 5%; left: 5%; border-radius: 50%; border-radius:50%; background: rgba(255,255,255,0.1); text-align: center;color: #fff; }
+.protxt img{ max-width:100%; display: block; margin: 15px auto 5px; width:60%;}
+.protxt span{ font-size: 26px; line-height: 108px;}
+.progresstxt{ text-align: center; color: #fff; font-size: 15px; padding: 10px 0;}
+
+.jl-logo{ display: block; width: 100%; position: absolute; left: 0; top: 0 }
+.jl-logo img{display: block; max-width: 100%; margin: 0 auto;}
+
+.jl-map{width: 54%;  position: fixed; 
+    top: 50%; left: 50%;
+     transform: translate(-50%,-50%);
+    overflow: hidden; z-index: 66666;
+}
+.jl-map .map{ width: 100%; }
+.jl-map .map img{ max-width: 100%; display: block; margin: 0 auto; }
+
+.cameras{ position: absolute; top: 30%; left: 60%; z-index: 666666; opacity: 1;}
+.cameras-info{cursor: pointer;  line-height: 22px; background: rgba(255,255,255,0.9); font-size: 16px; color: #111;
+     position:relative; display: inline-block; margin:0 30px; padding: 5px; border-radius:4px; }
+.cameras-info::after{
+   position: absolute; top: 100%; left: 50%;
+   transform: translateX(-50%);
+  content: "";
+  width:0; 
+  height:0; 
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:5px solid rgba(255,255,255,0.9);}
+  .cameras-info b{ width: 14px; height: 14px; margin-top: 3px; margin-right: 5px; display: block; background: #21a847; float: left;}
+  .cameras-info b.mang{ background: #f72b2b;}
+  .cameras-info label{display: block; float: left;}
+  .cameras-info span{ display: none; float: left; margin-left: 5px;}
+  .cameras-info:hover{ margin: 0;}
+  .cameras-info:hover span{ display: block;}
+.cameras img{ width: 6em; display: block;}
+
+.lr-cadr.left{ width: 24%;float: left;}
+.lr-cadr.min{ width: 50%;float: left; height: 100%;}
+.lr-cadr.right{ width:26%;float: right;}
+
+.videobox{ position: absolute; display: none; width:800px;height: 460px;
+     background: rgba(29,42,94,0.5);transform: translate(-50%,-50%);
+    z-index: 6666666; top: 50%; left: 50%; 
+    box-shadow:0px 10px 73px 14px rgba(5,43,168,0.68);
+    border-radius: 40px 0 30px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.videoclose{ position: absolute; width: 40px; height: 40px; line-height: 40px; text-align: center; 
+        font-size: 20px;background: rgba(29,42,94,0.9);border-radius: 50%; color: #fff; top: 10px; right: 10px; cursor: pointer; }
+
+.lr-box{ width: 100%;  background: rgba(29,42,94,0.5); margin-bottom:80px;
+border-radius: 40px 0 30px 0; box-shadow:0px 10px 73px 14px rgba(5,43,168,0.68);box-sizing: border-box; padding: 10px 15px 10px 20px; }
+.lr-box-title{ width: 100%; box-sizing: border-box; padding: 10px 15px 0; line-height:2em;}
+.lr-box-title label{ color: #fff; font-size: 1.2em;}
+.lr-box-title label span{ color: #97aaec; font-size: 0.8em; margin-left: 0.5em; background: url('../images/da.png') no-repeat 100% 50%;
+background-size: 12px; display: inline-block; padding-right: 16px;}
+
+.lr-carInfo-list{ padding: 5px 20px; }
+.lr-carInfo-list .fang{ width: 8px; height: 8px; border-radius: 2px; background: #0cdaef; margin-top:7px;}
+.lr-carInfo-list .infoTxt{ color: #fff; font-size: 16px; margin: 0 15px;}
+.lr-carInfo-list .crossing{ color: #0bdaef; font-size: 16px;}
+.lr-carInfo-list.yichang .fang{ background:#ad5d43 }
+.lr-carInfo-list.yichang .crossing{ color:#ad5d43 }
+
+.lr-databox{ padding: 0 10%;}
+.lr-datalist{ width: 50%; box-sizing: border-box; padding-left: 5%; color: #fff;}
+.lr-datalist label{ font-size:22px;}
+
+.dataTxt{  color: #fff; margin-top: 10px;}
+.dataTxt span{ font-size:30px; font-weight: bold; display: block; float: left; padding:2px 5px; background:#0399c4; margin-right: 4px;}
+.dataTxt b{font-size: 36px; display: block; float: left;}
+
+.lr-min-congestion{
+    position: absolute;bottom: 20%; right: 5%; width: 240px; height: 160px;
+    z-index: 44;
+}
+
+.lr-min-bottom{ margin: 0 auto; position: absolute; bottom: 5%;left: 50%; transform: translateX(-50%);
+background: url("../images/dbbar.png") no-repeat 50% 50%; 
+ width: 80%; height: 80px;
+  background-size: 100% 100%;
+}
+.lr-min-bottom-item{ width: 50%;}
+.lr-min-bottom-item .img-{ height: 80px; }
+.lr-min-bottom-item .img-.carCount{ margin-left:10% }
+.lr-min-bottom-item .img- img { height: 70%; margin-top: 10%;}
+.lr-min-bottom-item .txt-{margin-top: 5%; margin-left: 5px; margin-right: 10% }
+.lr-min-bottom-item .txt- label{ font-size: 18px; color: #fff; display: block}
+.lr-min-bottom-item .txt- span{ font-size: 16px; color: #00fefe; display: block}
+
+.lr-cadr.right .lr-box{ margin-bottom: 50px;}
+.lr-box-out-title{ margin-top: -30px; color: #6f91dc; font-size: 16px; margin-bottom: 10px;}
+.lr-box-out-title span{ color: #cf6d42;}
+.lr-right-echarts{ width: 100%; height: 180px;}
+
+.huan{ position: relative; width:80%; height: 140px; margin: 0 auto;}
+.huanbg{ position: absolute; width: 100%; height: 100%; z-index: 2;}
+.huanbg img{ max-width: 100%; display: block; margin:  auto;}
+.huanBox{ box-sizing: border-box; margin: auto; width: 168px; height: 168px; border-radius: 50%; position: relative; z-index: 3;
+    transform: rotateZ(0deg); border:12px solid transparent}
+.huanBox::after{ content: " "; width: 10px; height: 10px; border-radius: 50%; border: 3px solid #fff;
+    position: absolute; left: -14px; top: 50%; transform: translateY(-50%); background: #00fefe;
+}
+
+.huantxt{ position: absolute; z-index: 4;width: 168px; height: 168px; left: 50%; padding-top: 60px;
+     box-sizing: border-box;transform: translateX(-50%); top:0; }
+.huantxt label{ color: #fff; font-size:20px; display: block; text-align: center;}
+.huantxt span{margin-top: 5px; margin-left: -30%; display: block; width: 160%; text-align: center;color: rgba(255,255,255,0.6)}
+.huantxt b{ text-align: center; display: block; width: 40px; position: absolute; top: 50%;transform: translateY(-50%); color: #fff; font-size: 14px;}
+.huantxt .huantxtB-left{ right:100%;}
+.huantxt .huantxtB-right{ left:100%;}

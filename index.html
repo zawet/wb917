@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="icon" href="micon.ico">
+    <title>聚云科技.龙瑞智慧停车管理平台</title>
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/lr.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="jlbody">
+    <!--加载层-->
+    <div class="loadprogress" id="loadprogress">
+        <div class="progress">
+            <div class="progressyuan">
+                <div class="proleft pro">
+                    <b id="lb"></b>
+                </div>
+                <div class="proright pro">
+                    <b id="rb"></b>
+                </div>
+                <div class="protxt">
+                    <span class="bf" id="bf">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page bg"></div>
+    <div class="jl-map">
+        <div class="map"></div>
+        <div class="cameras-box"></div>
+    </div>
+    <div class="videobox">
+        <div class="videoclose">X</div>
+        <!-- <iframe frameborder="none" src="" width="100%" height="100%" style="overflow:auto;" ></iframe> -->
+    </div>
+    <div class="jlbox clear">
+        <div class="jl-logo logo"></div>
+        <div class="lr-cadr left"></div>
+        <div class="lr-cadr min po_r">
+            <div class="lr-databox clear">
+                <div class="lr-datalist fl">
+                    <label>总车流量：</label>
+                    <div class="dataTxt clear">
+
+                    </div>
+                </div>
+                <div class="lr-datalist fl">
+                    <label>总收入：</label>
+                    <div class="dataTxt clear"></div>
+                </div>
+            </div>
+
+            <div class="lr-min-congestion">
+                <div class="huan">
+                    <div class="huanbg"></div>
+                    <div class="huanBox trn"></div>
+                    <div class="huantxt">
+                        <label class="thisNum"></label>
+                        <label>拥堵指数</label>
+                        <span>停车场通行耗时是畅通时的 <em class="thisNum"></em> 倍</span>
+                        <b class="huantxtB-left">畅通</b>
+                        <b class="huantxtB-right">拥堵</b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lr-min-bottom clear">
+                <div class="lr-min-bottom-item fl clear">
+                    <div class="txt- fr">
+                        <label>总车位</label>
+                        <span class="item-carP"></span>
+                    </div>
+                    <div class="img- carP fr"></div>
+                </div>
+                <div class="lr-min-bottom-item fl clear">
+                    <div class="img- carCount fl"></div>
+                    <div class="txt- fl">
+                        <label>场内车辆</label>
+                        <span class="item-carCount"></span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="lr-cadr right">
+            <div class="t_r lr-box-out-title">今日收入 <span>53</span> </div>
+            <div class="lr-box">
+                <div class="lr-box-title">
+                    <label> <b class="tit">收入趋势</b></label>
+                </div>
+                <div class="lr-right-echarts" id="lr-price"></div>
+
+            </div>
+
+            <div class="lr-box">
+                <div class="lr-box-title">
+                    <label> <b class="tit">车流量</b></label>
+                </div>
+                <div class="lr-right-echarts" id="lr-carFlow"></div>
+            </div>
+
+            <div class="lr-box">
+                <div class="lr-box-title">
+                    <label> <b class="tit">车辆类型</b></label>
+                </div>
+                <div class="lr-right-echarts" id="lr-carType"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="yc" id="cameraMouble">
+        <a class="cameras">
+            <div class="cameras-info trn">
+                <b></b><label>#1</label><span>车流量:1111</span>
+                <div style="clear:both"></div>
+            </div>
+            <img src="images/cam.png" alt="">
+        </a>
+    </div>
+    <div class="yc" id="leftMouble">
+        <div class="lr-box">
+            <div class="lr-box-title">
+                <label> <b class="tit">入场车辆</b> <span>more</span></label>
+            </div>
+            <div class="lr-left-ul"></div>
+
+        </div>
+    </div>
+    <div class="yc" id="listMouble">
+        <div class="lr-carInfo-list clear">
+            <div class="fl fang"></div>
+            <div class="fl infoTxt"><span>粤T 12345</span> <span>11:11:55</span></div>
+            <div class="fl crossing">3# 路口</div>
+        </div>
+    </div>
+
+    <script language="JavaScript" charset="utf-8" src="js/preloadjs-0.6.2.min.js"></script>
+    <script src="js/sea.js"></script>
+    <script src="js/seaconfig2.0.js"></script>
+    <script>
+        seajs.use(["jq", "run", "ec"], function (j, r, sw) {
+            r.jl();
+        });
+    </script>
+</body>
+
+</html>
