@@ -41,6 +41,7 @@ define({ //dedine闭包
                 data:[
                   {address:"龙瑞车场",info:"人工开闸",crossing:"3# 路口"},
                   {address:"龙瑞车场",info:"离线",crossing:"3# 路口"},
+                  {address:"龙瑞车场",info:"离线",crossing:"3# 路口"},
                 ]
   
            }

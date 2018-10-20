@@ -36,12 +36,12 @@
 .jl-logo{ display: block; width: 100%; position: absolute; left: 0; top: 0 }
 .jl-logo img{display: block; max-width: 100%; margin: 0 auto;}
 
-.jl-map{width: 54%;  position: fixed; 
-    top: 50%; left: 50%;
-     transform: translate(-50%,-50%);
-    overflow: hidden; z-index: 66666;
+.jl-map{width:100%;  position: relative; 
+    /* top: 30%; left: 50%;
+     transform: translate(-50%,0);
+    overflow: hidden; z-index: 66666; */
 }
-.jl-map .map{ width: 100%; }
+.jl-map .map{ width: 100%; margin-top: 20px; }
 .jl-map .map img{ max-width: 100%; display: block; margin: 0 auto; }
 
 .cameras{ position: absolute; top: 30%; left: 60%; z-index: 666666; opacity: 1;}
@@ -55,6 +55,7 @@
   height:0; 
   border-left:5px solid transparent;
   border-right:5px solid transparent;
+  
   border-top:5px solid rgba(255,255,255,0.9);}
   .cameras-info b{ width: 14px; height: 14px; margin-top: 3px; margin-right: 5px; display: block; background: #21a847; float: left;}
   .cameras-info b.mang{ background: #f72b2b;}
@@ -62,7 +63,8 @@
   .cameras-info span{ display: none; float: left; margin-left: 5px;}
   .cameras-info:hover{ margin: 0;}
   .cameras-info:hover span{ display: block;}
-.cameras img{ width: 6em; display: block;}
+.cameras img{ width: 6em; display: block; opacity: 0.6;}
+.cameras img:hover{ opacity: 1;}
 
 .lr-cadr.left{ width: 24%;float: left;}
 .lr-cadr.min{ width: 50%;float: left; height: 100%;}
@@ -85,8 +87,9 @@ border-radius: 40px 0 30px 0; box-shadow:0px 10px 73px 14px rgba(5,43,168,0.68);
 .lr-box-title label{ color: #fff; font-size: 1.2em;}
 .lr-box-title label span{ color: #97aaec; font-size: 0.8em; margin-left: 0.5em; background: url('../images/da.png') no-repeat 100% 50%;
 background-size: 12px; display: inline-block; padding-right: 16px;}
+.lr-left-ul{ overflow: hidden; height: 90px; width: 100%;}
 
-.lr-carInfo-list{ padding: 5px 20px; }
+.lr-carInfo-list{ padding: 4px 20px; line-height: 22px; }
 .lr-carInfo-list .fang{ width: 8px; height: 8px; border-radius: 2px; background: #0cdaef; margin-top:7px;}
 .lr-carInfo-list .infoTxt{ color: #fff; font-size: 16px; margin: 0 15px;}
 .lr-carInfo-list .crossing{ color: #0bdaef; font-size: 16px;}
@@ -102,11 +105,16 @@ background-size: 12px; display: inline-block; padding-right: 16px;}
 .dataTxt b{font-size: 36px; display: block; float: left;}
 
 .lr-min-congestion{
-    position: absolute;bottom: 20%; right: 5%; width: 240px; height: 160px;
+    /* position: absolute;bottom: 20%; right: 5%; */
+      float: right;
+       margin-top: -100px;
+       margin-right: 20px;
+     width: 240px; height: 160px;
     z-index: 44;
 }
 
-.lr-min-bottom{ margin: 0 auto; position: absolute; bottom: 5%;left: 50%; transform: translateX(-50%);
+.lr-min-bottom{ margin: 0 auto; 
+    /* position: absolute; bottom: 5%;left: 50%; transform: translateX(-50%); */
 background: url("../images/dbbar.png") no-repeat 50% 50%; 
  width: 80%; height: 80px;
   background-size: 100% 100%;

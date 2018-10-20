@@ -5,6 +5,9 @@ define(function (require, exports) { //dedine闭包
 	var config=require("./Config");//获取配置项（图片地址和异步地址）
 
 	
+	var iHeight = 30; //单行高度，像素 
+	var iSAmount = 1; //每次滚动高度，像素 
+	
 exports.jl = function () {
 	loads.startPreload(config.loadimg,function(){
 		//加载图片
@@ -18,11 +21,19 @@ exports.jl = function () {
 		leftDraw(lrdata.leftData)//左边渲染
 		minDraw(lrdata.minData,config.congestion)//中间渲染
 		rightDraw(lrdata.rightData)//右边渲染
+		
+		scale()
+		gun('l0',3)
+		gun('l1',3)
+		gun('l2',3)
+		gun('l3',3)
+		
 
 
 		//浏览器窗户变化时
 		window.onresize = function () {
 			loads.pageimg($(".page"), 1920, 1080);
+			scale()
 		}
 		//摄像头点击后
 		$(".cameras").click(function(){
@@ -36,15 +47,43 @@ exports.jl = function () {
 	})
 }
 
+ function scale(){
+	var wh=$(window).height()
+		var fbh=window.screen.height
+		//console.log(wh,fbh,wh/fbh);
+		$(".jlbox").css({"transform":"scale("+wh/fbh+")","margin-top":'-'+Math.floor(wh*((1-(wh/fbh))/2))+"px"})
+ }
 
+ 
+
+ function gun(id,iCount){
+	var om= document.getElementById(id)
+		function runs() {
+			om.scrollTop += iSAmount;
+			if ( om.scrollTop == iCount * iHeight ) om.scrollTop = 0;
+			
+			if ( om.scrollTop % iHeight == 0 ) {
+				setTimeout( function(){runs()},30 );
+			} else {
+				setTimeout( function(){runs()}, 30 );
+			}
+		}
+		om.innerHTML += om.innerHTML;
+		setTimeout(function(){runs()},1)
+ }
+
+	
+	
+	
+ 
 function leftDraw(data){
 	//渲染左边dom和数据
 	$(".lr-cadr.left").html("");
 	for(var i=0;i<data.length;i++){
 		$("#leftMouble").find(".tit").html(data[i].txitle);
-		$("#leftMouble .lr-box .lr-left-ul").html("")
+		$("#leftMouble .lr-box .lr-left-ul").html("").attr('id','')
 		for( var j=0;j<data[i].data.length;j++){
-			if(j<3){
+			//if(j<3){
 				if(i==3){
 					$("#listMouble .lr-carInfo-list").addClass("yichang")
 					$("#listMouble .infoTxt span").eq(0).html(data[i].data[j].address)
@@ -55,16 +94,16 @@ function leftDraw(data){
 					$("#listMouble .infoTxt span").eq(1).html(data[i].data[j].time)
 					$("#listMouble .crossing").html(data[i].data[j].crossing)
 				}
-				$("#leftMouble .lr-box .lr-left-ul").append($("#listMouble").html())
-			}
+				$("#leftMouble .lr-box .lr-left-ul").append($("#listMouble").html()).attr('id','l'+i)
+			//}
 		}
 		$(".lr-cadr.left").append($("#leftMouble").html());
 	}
 }
 
 function minDraw(data,cf){
-	spileData(data.allCarNumber,$(".lr-databox .lr-datalist").eq(0))
-	spileData(data.total,$(".lr-databox .lr-datalist").eq(1))
+	numAN(data.allCarNumber,$(".lr-databox .lr-datalist").eq(0))
+	numAN(data.total,$(".lr-databox .lr-datalist").eq(1))
 
 	$(".cameras-box").html("");
 	for(var ca=0;ca<data.cameras.length;ca++){
@@ -88,12 +127,24 @@ function minDraw(data,cf){
 
 function spileData(int,drwaID){//分割数据变成一个个的
 	var acn=toArray(int);
+	drwaID.find(".dataTxt").html("")
 	for( var ks=0;ks<acn.length;ks++){
 		if(ks%3==0&&ks!=acn.length-1)
 		drwaID.find(".dataTxt").append("<span>"+acn[ks]+"</span><b>,</b>")
 		else
 		drwaID.find(".dataTxt").append("<span>"+acn[ks]+"</span>")
 	}	
+}
+function numAN(int,drawID){
+	var sn=0;
+	var s=setInterval(function(){
+		sn=sn+Math.floor(int*0.01)
+		if(sn>int){
+			sn=int
+			clearInterval(s)
+		}
+		spileData(sn,drawID)
+	},30)
 }
 
 function toArray(str){//把字符串变成数组
