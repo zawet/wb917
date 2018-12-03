@@ -40,6 +40,12 @@ exports.jl = function () {
 			console.log("我是摄像头："+$(this).index());
 			$(".videobox").slideDown(200);
 		});
+
+		$("body").on("click",".cameras",function(){
+			console.log("我是摄像头："+$(this).index());
+			$(".videobox").slideDown(200);
+		})
+		
 		$(".videoclose").click(function(){
 			$(".videobox").slideUp(200);
 		})

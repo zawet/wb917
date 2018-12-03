@@ -106,26 +106,24 @@ background-size: 12px; display: inline-block; padding-right: 16px;}
 
 .lr-min-congestion{
     /* position: absolute;bottom: 20%; right: 5%; */
-      float: right;
-       margin-top: -100px;
-       margin-right: 20px;
-     width: 240px; height: 160px;
-    z-index: 44;
+    float: right;
+    width: 200px;
+    height: 120px;
+    margin-bottom: 10px;
 }
 
 .lr-min-bottom{ margin: 0 auto; 
     /* position: absolute; bottom: 5%;left: 50%; transform: translateX(-50%); */
 background: url("../images/dbbar.png") no-repeat 50% 50%; 
- width: 80%; height: 80px;
-  background-size: 100% 100%;
+ width: 80%; background-size:100% 100%; padding: 20px 0;
 }
-.lr-min-bottom-item{ width: 50%;}
+.lr-min-bottom-item{ width: 30%;  margin-top: 30px;}
 .lr-min-bottom-item .img-{ height: 80px; }
 .lr-min-bottom-item .img-.carCount{ margin-left:10% }
 .lr-min-bottom-item .img- img { height: 70%; margin-top: 10%;}
 .lr-min-bottom-item .txt-{margin-top: 5%; margin-left: 5px; margin-right: 10% }
-.lr-min-bottom-item .txt- label{ font-size: 18px; color: #fff; display: block}
-.lr-min-bottom-item .txt- span{ font-size: 16px; color: #00fefe; display: block}
+.lr-min-bottom-item .txt- label{ font-size: 22px; color: #fff; display: block}
+.lr-min-bottom-item .txt- span{ font-size: 20px; color: #00fefe; display: block}
 
 .lr-cadr.right .lr-box{ margin-bottom: 50px;}
 .lr-box-out-title{ margin-top: -30px; color: #6f91dc; font-size: 16px; margin-bottom: 10px;}
